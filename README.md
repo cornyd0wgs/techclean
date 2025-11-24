@@ -1,2 +1,2 @@
 # techclean
-for techclean eng127 business
+yawa rag kini ray ma basa ba panulaya
