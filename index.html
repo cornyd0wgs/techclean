@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechClean — Dust Out, Power Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="logo">TC</div>
+        <div>
+          <h1>TECHCLEAN</h1>
+          <p>DUST OUT, POWER UP — Technical maintenance service</p>
+        </div>
+      </div>
+
+      <nav>
+        <button class="nav-btn" onclick="scrollToSection('services')">SERVICES</button>
+        <button class="nav-btn" onclick="scrollToSection('about')">ABOUT</button>
+        <button class="nav-btn" onclick="scrollToSection('contact')">CONTACT</button>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="hero-left">
+        <h2>PROFESSIONAL DEVICE DEEP-CLEANING</h2>
+        <p>Safe, eco-friendly, technician-grade deep cleaning for phones, laptops, desktops, and consoles. We offer on-site (home) and in-store services.</p>
+        <div class="tag">Open: Mon-Sat • Daro, Dumaguete City</div>
+      </div>
+      <div class="hero-logo-wrap"><div class="hero-logo">LOGO</div></div>
+    </div>
+
+    <section id="services" class="section">
+      <h3>CHOOSE A CATEGORY</h3>
+      <div class="carousel-wrap">
+        <div class="carousel" id="categoryCarousel"></div>
+        <div class="carousel-control left" onclick="scrollCarousel(-420)">◀</div>
+        <div class="carousel-control right" onclick="scrollCarousel(420)">▶</div>
+      </div>
+    </section>
+
+    <div id="detailsArea" class="panel hidden">
+      <div class="panel-grid">
+        <div>
+          <h3 id="detailTitle"></h3>
+          <p id="detailDesc" class="muted"></p>
+          <div id="serviceList" class="service-list"></div>
+        </div>
+
+        <aside>
+          <div class="book-box">
+            <h4>BOOK THIS SERVICE</h4>
+            <p class="muted small">Choose home service or drop-off at our store.</p>
+
+            <label for="mode">Service Mode</label>
+            <select id="mode">
+              <option value="home">Home Service (Technician visits)</option>
+              <option value="store">In-Store (Drop-off)</option>
+            </select>
+
+            <label for="custName">Your name</label>
+            <input id="custName" placeholder="Juan dela Cruz">
+
+            <label for="custPhone">Phone</label>
+            <input id="custPhone" placeholder="0917xxxxxxx">
+
+            <label for="datePick">Preferred date</label>
+            <input id="datePick" type="date">
+
+            <label for="timePick">Preferred time</label>
+            <input id="timePick" type="time">
+
+            <div class="btn-row">
+              <button class="btn btn-primary" id="confirmBook">CONFIRM BOOKING</button>
+              <button class="btn btn-ghost" onclick="closeDetails()">CANCEL</button>
+            </div>
+
+            <div id="bookMsg" class="muted small"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="chat">
+      <div class="chat-head">
+        <h3>CHAT</h3>
+        <div class="small muted">Live help • simulated</div>
+      </div>
+
+      <div class="messages" id="messages"></div>
+
+      <div class="chat-input">
+        <input id="msgInput" placeholder="Type a message...">
+        <button class="btn btn-primary" onclick="sendChat()">SEND</button>
+      </div>
+    </div>
+
+    <section id="about">
+      <h3>ABOUT US</h3>
+      <p class="muted">We provide safe, professional deep-cleaning for electronic devices. All tools used are anti-static and technician-grade. Offers both on-site and pickup cleaning services. Uses eco-friendly solutions safe for components. Helps extend device lifespan and prevent costly repairs.</p>
+    </section>
+
+    <section id="contact">
+      <h3>CONTACT</h3>
+      <p class="muted">Daro, Dumaguete City, Kagawasan Avenue • Phone: 0917-XXX-XXXX</p>
+    </section>
+
+    <footer>TECHCLEAN • DUST OUT, POWER UP</footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
