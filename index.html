@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechClean — Dust Out, Power Up</title>
+  <meta name="description" content="TechClean — professional device deep cleaning (on-site & in-store)." />
+  <link rel="stylesheet" href="style.css">
+  <!-- Using a placeholder image path for the logo -->
+  <link rel="icon" type="image/png" href="https://placehold.co/32x32/1d4ed8/ffffff?text=TC">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">
+        <!-- Using the logo path provided in context (techc.png) -->
+        <div class="logo-img" aria-hidden>
+          <img src="techc.png" alt="TechClean Logo" class="brand-logo"/>
+        </div>
+        <div>
+          <h1>TECHCLEAN</h1>
+          <p class="slogan">DUST OUT, POWER UP</p>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation">☰</button>
+
+      <nav class="nav" id="nav">
+        <a href="#services">Services</a>
+        <a href="#booking">Booking</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="container hero">
+      <div class="hero-grid">
+        <div class="hero-text reveal">
+          <h2>Professional Deep Cleaning for Your Electronics</h2>
+          <p class="lead">Is your device running hot or slow? We provide specialized anti-static cleaning for phones, laptops, PCs, and gaming consoles to extend their lifespan and restore performance.</p>
+          <div class="hero-ctas">
+            <a href="#services" class="btn primary">View Services</a>
+          </div>
+        </div>
+        <div class="hero-card reveal">
+          <!-- Using the logo for the large hero display -->
+          <img src="techc.png" alt="TechClean Logo" class="hero-logo"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why" class="container why-us">
+      <h3 class="section-title reveal">Why Choose TechClean?</h3>
+      <div class="why-grid reveal">
+        <div>
+          <p class="muted">We focus solely on cleanliness and internal maintenance, guaranteeing the safest treatment for your devices.</p>
+          <ul class="bullets">
+            <li>Anti-static and Technician-Grade Tools</li>
+            <li>On-site or Pickup Service Options</li>
+            <li>Eco-friendly Cleaning Solutions</li>
+            <li>Performance Restoration (Thermal Paste Included)</li>
+          </ul>
+        </div>
+        <div>
+          <p class="muted">Our expertise helps prevent future costly repairs and ensures maximum device efficiency.</p>
+          <ul class="bullets">
+            <li>Trained and Certified Clean Technicians</li>
+            <li>Transparent Pricing and Service Details</li>
+            <li>Fast Turnaround Time</li>
+            <li>Focus on Dust, Dirt, and Corrosion Prevention</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="container services-section">
+      <h3 class="section-title reveal">Our Cleaning Categories</h3>
+      <p class="muted small mb-2 category-instruction reveal">Click a category below to view detailed services and **SELECT** one to proceed to booking.</p>
+      <div id="categoriesGrid" class="categories-grid reveal">
+        <!-- Categories rendered by app.js -->
+      </div>
+
+      <!-- SERVICE DETAILS PANEL (Hidden by default) -->
+      <div id="categoryDetails" class="details-panel hidden">
+        <div class="details-header">
+            <div>
+                <h4 id="detailsTitle"></h4>
+                <p id="detailsDesc" class="muted small"></p>
+            </div>
+            <button class="btn ghost small" onclick="closeDetails()">Close [✕]</button>
+        </div>
+        <div id="detailsList" class="services-list">
+          <!-- Services rendered by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking" class="container booking-section">
+      <h3 class="section-title reveal">Book Your Clean</h3>
+      <div class="booking-grid reveal">
+        <form id="bookingForm" class="booking-form">
+          
+          <!-- SERVICE SELECTION DISPLAY -->
+          <label>Selected Service</label>
+          <div id="selectedServiceDisplay" class="input-display small muted">
+            (No service selected)
+          </div>
+          <!-- Hidden input to store the selected service ID -->
+          <input type="hidden" id="selService" required />
+
+          <label for="selMode">Cleaning Mode</label>
+          <select id="selMode">
+            <option value="In-Store">In-Store / Drop-off (Dumaguete)</option>
+            <option value="On-Site">On-Site / Pick-up (Requires Technician Travel Fee)</option>
+          </select>
+
+          <label for="bkName">Your Name</label>
+          <input id="bkName" type="text" placeholder="Full Name" required />
+
+          <label for="bkPhone">Phone Number</label>
+          <input id="bkPhone" type="tel" placeholder="e.g. 0917-XXX-XXXX" required />
+
+          <div class="form-row">
+            <div>
+              <label for="bkDate">Date</label>
+              <input id="bkDate" type="date" required />
+            </div>
+            <div>
+              <label for="bkTime">Time</label>
+              <input id="bkTime" type="time" required />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn primary" id="submitBooking">Confirm Booking</button>
+            <button type="button" class="btn ghost" onclick="resetBookingForm()">Reset</button>
+          </div>
+
+          <div id="bookingMsg" class="muted small mt-2"></div>
+        </form>
+
+        <aside class="booking-side">
+          <h4>Recent Bookings (Demo)</h4>
+          <div id="bookingsList" class="bookings-list muted small"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container about-section">
+      <h2 class="section-title reveal">About Us</h2>
+      <p class="muted reveal">We provide safe, professional deep-cleaning for electronic devices. All tools used are anti-static and technician-grade. Offers both on-site and pickup cleaning services. Uses eco-friendly solutions safe for components.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container contact-section">
+      <h2 class="section-title reveal">Contact</h2>
+      <p class="reveal">Daro, Dumaguete City, Kagawasan Avenue</p>
+      <p class="muted reveal">Phone: 0917-XXX-XXXX</p>
+    </section>
+  </main>
+
+  <!-- CHAT BOT (FIXED POSITION) -->
+  <div class="chat-container">
+    <div class="chat-header" id="chatHeader">
+        <span class="chat-icon">💬</span>
+        <span class="chat-title">TechClean Assistant</span>
+        <button class="chat-toggle" id="chatToggle">_</button>
+    </div>
+    <div class="chat-body" id="chatBody">
+        <div class="messages" id="messages">
+            <!-- Messages go here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="msgInput" placeholder="Ask a question..." onkeydown="if(event.key==='Enter') sendChat()" />
+            <button onclick="sendChat()">Send</button>
+        </div>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
