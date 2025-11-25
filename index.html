@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechClean — Dust Out, Power Up</title>
+  <meta name="description" content="TechClean — professional device deep cleaning (on-site & in-store)." />
+  <link rel="stylesheet" href="style.css">
+  <!-- Reference to user's uploaded PPT (logo / copy reference): /mnt/data/TechClean.pptx -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">
+        <!-- Logo added to brand area -->
+        <div class="logo-img" aria-hidden>
+          <img src="uploaded:Gemini_Generated_Image_hayccnhayccnhayc.jpg-da91193e-9774-49c5-8eef-941d0827c025" alt="TechClean Logo" class="brand-logo"/>
+        </div>
+        <div>
+          <h1>TECHCLEAN</h1>
+          <p class="slogan">DUST OUT, POWER UP</p>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation">☰</button>
+
+      <nav class="nav" id="nav">
+        <a href="#services">Services</a>
+        <a href="#booking">Booking</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h2>Professional device deep-cleaning</h2>
+          <p class="lead">Safe, eco-friendly, technician-grade cleaning for phones, laptops, desktops, and consoles. On-site (home) and in-store options available.</p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="#services">View Services</a>
+            <a class="btn" href="#booking">Book Now</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- Logo added to hero card -->
+          <div class="hero-card">
+            <img src="uploaded:Gemini_Generated_Image_hayccnhayccnhayc.jpg-da91193e-9774-49c5-8eef-941d0827c025" alt="TechClean Logo" class="hero-logo"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="container why-us">
+      <div class="grid why-grid">
+        <div>
+          <h3>Why choose TechClean?</h3>
+          <ul class="bullets">
+            <li>Anti-static, technician-grade tools</li>
+            <li>Eco-friendly solutions safe for components</li>
+            <li>Extend device lifespan and prevent costly repairs</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Open & Location</h3>
+          <p>Daro, Dumaguete City • Mon–Sat</p>
+          <p class="muted">Phone: 0917-XXX-XXXX</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="container services-section">
+      <h2 class="section-title">Our Services</h2>
+      <p class="muted">Click a category to see detailed services and price ranges.</p>
+
+      <div class="categories-grid" id="categoriesGrid"></div>
+
+      <!-- Detailed services & booking anchor -->
+      <div id="categoryDetails" class="details-panel hidden">
+        <div class="details-header">
+          <h3 id="detailsTitle"></h3>
+          <button class="btn ghost" onclick="closeDetails()">Close</button>
+        </div>
+        <p id="detailsDesc" class="muted"></p>
+
+        <div id="detailsList" class="services-list"></div>
+      </div>
+    </section>
+
+    <!-- BOOKING (separate section) -->
+    <section id="booking" class="container booking-section">
+      <h2 class="section-title">Booking</h2>
+      <p class="muted">Finish your booking here after choosing a service (or pick directly from service details).</p>
+
+      <div class="booking-grid">
+        <form id="bookingForm" class="booking-form">
+          <label>Selected Service</label>
+          <input id="selService" readonly placeholder="No service selected" />
+
+          <label>Mode</label>
+          <select id="selMode">
+            <option value="home">Home Service (Technician visits)</option>
+            <option value="store">In-Store (Drop-off)</option>
+          </select>
+
+          <div class="form-row">
+            <div>
+              <label>Your name</label>
+              <input id="bkName" placeholder="Juan dela Cruz" />
+            </div>
+            <div>
+              <label>Phone</label>
+              <input id="bkPhone" placeholder="0917xxxxxxx" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label>Date</label>
+              <input id="bkDate" type="date" />
+            </div>
+            <div>
+              <label>Time</label>
+              <input id="bkTime" type="time" />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn primary" id="submitBooking">Confirm Booking</button>
+            <button type="button" class="btn ghost" onclick="resetBookingForm()">Reset</button>
+          </div>
+
+          <div id="bookingMsg" class="muted small"></div>
+        </form>
+
+        <aside class="booking-side">
+          <h4>Recent Bookings (Demo)</h4>
+          <div id="bookingsList" class="bookings-list muted small"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container about-section">
+      <h2 class="section-title">About Us</h2>
+      <p class="muted">We provide safe, professional deep-cleaning for electronic devices. All tools used are anti-static and technician-grade. Offers both on-site and pickup cleaning services. Uses eco-friendly solutions safe for components.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container contact-section">
+      <h2 class="section-title">Contact</h2>
+      <p>Daro, Dumaguete City, Kagawasan Avenue</p>
+      <p class="muted">Phone: 0917-XXX-XXXX</p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <div>© <span id="year"></span> TECHCLEAN • DUST OUT, POWER UP</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
